@@ -1,7 +1,6 @@
 """Sphinx configuration."""
 from datetime import datetime
 
-
 project = "Pybox"
 author = "yangli"
 copyright = f"{datetime.now().year}, {author}"
@@ -12,3 +11,4 @@ extensions = [
 ]
 autodoc_typehints = "description"
 html_theme = "furo"
+html_logo = "_static/logo.png"

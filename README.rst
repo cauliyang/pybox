@@ -35,6 +35,10 @@ Pybox
    :target: https://github.com/psf/black
    :alt: Black
 
+.. badges-end
+
+.. raw: html
+    <p align="center" <img alt='logo' src='docs/_static/logo.png' width=50% /> </p>
 
 Aims
 --------
@@ -46,7 +50,7 @@ Aims
 Features
 ------------
 
-- `Google Driver`_:
+- Google-Driver_:
   - A simple and easy to download files by sharing link of Google Driver.
 
 - More to come...
@@ -101,4 +105,4 @@ Credits
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://pybox.readthedocs.io/en/latest/usage.html
-.. _Google Driver: https://www.google.com/drive/
+.. _Google-Driver: https://www.google.com/drive/
