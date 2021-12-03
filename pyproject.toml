@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "pybox"
+name = "pyboxes"
 version = "0.0.0"
-description = "Pybox"
+description = "Pyboxes"
 authors = ["yangli <li002252@umn.edu>"]
 license = "MIT"
 readme = "README.rst"
 homepage = "https://github.com/cauliyang/pybox"
 repository = "https://github.com/cauliyang/pybox"
-documentation = "https://pybox.readthedocs.io"
+documentation = "https://pyboxes.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
 ]

@@ -19,9 +19,9 @@ Pybox
 .. |License| image:: https://img.shields.io/pypi/l/pybox
    :target: https://opensource.org/licenses/MIT
    :alt: License
-.. |Read the Docs| image:: https://img.shields.io/readthedocs/pybox/latest.svg?label=Read%20the%20Docs
+.. |Read the Docs| image:: https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs
    :target: https://pybox.readthedocs.io/
-   :alt: Read the documentation at https://pybox.readthedocs.io/
+   :alt: Read the documentation at https://pyboxes.readthedocs.io/
 .. |Tests| image:: https://github.com/cauliyang/pybox/workflows/Tests/badge.svg
    :target: https://github.com/cauliyang/pybox/actions?workflow=Tests
    :alt: Tests
