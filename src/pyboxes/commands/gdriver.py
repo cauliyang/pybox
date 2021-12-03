@@ -34,12 +34,12 @@ def cli(url: str, name: str, size: int) -> None:
             f"0-9A-Za-z_]+).*/\\1\\n/p')&id={file_id}\" -O {name} && rm -rf /tmp/cookies.txt "
         )
         subprocess.check_call(link, shell=True)
-        logger.info(f"downloaded {name}  Size about {size}mb")
+        logger.success(f"downloaded {name}  Size about {size}mb")
 
     else:
         link = f"wget --no-check-certificate 'https://docs.google.com/uc?export=download&id={file_id}' -O {name}"
         subprocess.check_call(link, shell=True)
-        logger.info(f"downloaded {name} Size about {size}mb")
+        logger.success(f"downloaded {name} Size about {size}mb")
 
 
 if __name__ == "__main__":
