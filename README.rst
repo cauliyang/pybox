@@ -7,16 +7,16 @@ Pybox
 
 |pre-commit| |Black|
 
-.. |PyPI| image:: https://img.shields.io/pypi/v/pybox.svg
+.. |PyPI| image:: https://img.shields.io/pypi/v/pyboxes.svg
    :target: https://pypi.org/project/pybox/
    :alt: PyPI
-.. |Status| image:: https://img.shields.io/pypi/status/pybox.svg
+.. |Status| image:: https://img.shields.io/pypi/status/pyboxes.svg
    :target: https://pypi.org/project/pybox/
    :alt: Status
-.. |Python Version| image:: https://img.shields.io/pypi/pyversions/pybox
+.. |Python Version| image:: https://img.shields.io/pypi/pyversions/pyboxes
    :target: https://pypi.org/project/pybox
    :alt: Python Version
-.. |License| image:: https://img.shields.io/pypi/l/pybox
+.. |License| image:: https://img.shields.io/pypi/l/pyboxes
    :target: https://opensource.org/licenses/MIT
    :alt: License
 .. |Read the Docs| image:: https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs
