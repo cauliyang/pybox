@@ -18,6 +18,7 @@ Changelog = "https://github.com/cauliyang/pybox/releases"
 [tool.poetry.dependencies]
 python = "^3.7"
 click = "^8.0.1"
+loguru = "^0.5.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
@@ -57,7 +58,7 @@ source = ["pybox", "tests"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 100
+fail_under = 40
 
 [tool.mypy]
 strict = true

@@ -36,17 +36,20 @@ Pybox
    :alt: Black
 
 
-Features
+Aims
 --------
 
-* TODO
+- **Simple**:
+  - A simple and easy to use Python library for many annoy task.
 
 
-Requirements
+Features
 ------------
 
-* TODO
+- `Google Driver`_:
+  - A simple and easy to download files by sharing link of Google Driver.
 
+- More to come...
 
 Installation
 ------------
@@ -88,8 +91,6 @@ please `file an issue`_ along with a detailed description.
 Credits
 -------
 
-This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
-
 .. _@cjolowicz: https://github.com/cjolowicz
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _MIT license: https://opensource.org/licenses/MIT
@@ -100,3 +101,4 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://pybox.readthedocs.io/en/latest/usage.html
+.. _Google Driver: https://www.google.com/drive/
