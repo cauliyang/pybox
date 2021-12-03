@@ -2,7 +2,7 @@
 # @Filename:    cli.py
 # @Author:      li002252
 # @Time:        12/2/21 9:42 PM
-""" the command line interface for pybox """
+"""the command line interface for pybox."""
 import re
 import subprocess
 
@@ -15,19 +15,14 @@ from loguru import logger
 @click.argument("name", type=click.STRING, metavar="<name>")
 @click.argument("size", type=click.INT, metavar="<size>")
 def cli(url: str, name: str, size: int) -> None:
-    """
-    Download file in Google Driver. You need to provide the sharing url
+    """Download file in Google Driver. You need to provide the sharing url,
     and estimated size of the file. The config is in terms of the file
     size so you need to be careful! Specify the size is divided into 2 classes:\n
     \b
     the large file : file size > 100mb
     the small file : file size < 100mb
     """
-
     pattern = re.compile(r"\/([0-9a-zA-Z-_]+)[\/a-z=\?]+?$")
-    # size > 100mb ==> large
-    # https://colab.research.google.com/drive/11AdvdQ7g01uvZWkLKkd1h_8wbEK7heZl?usp=sharing
-    # https://drive.google.com/file/d/1IGrTr308mGAaCKotpkkm8wTKlWs9Jq-p/view?usp=sharing
 
     file_id = re.findall(pattern, url)[0]
 
