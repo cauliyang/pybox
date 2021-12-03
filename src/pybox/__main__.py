@@ -1,6 +1,7 @@
 """Command-line interface."""
 import os
 from typing import Any
+from typing import Dict
 
 import click
 
@@ -35,7 +36,7 @@ class MyCLI(click.MultiCommand):
         Returns: the command object
 
         """
-        ns: dict[str, Any] = {}
+        ns: Dict[str, Any] = {}
         fn = os.path.join(plugin_folder, name + ".py")
         with open(fn) as f:
             code = compile(f.read(), fn, "exec")
