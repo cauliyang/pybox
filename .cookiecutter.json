@@ -1,0 +1,12 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "yangli",
+  "development_status": "Development Status :: 2 - Pre-Alpha",
+  "email": "li002252@umn.edu",
+  "friendly_name": "Pybox",
+  "github_user": "cauliyang",
+  "license": "MIT",
+  "package_name": "pybox",
+  "project_name": "pybox",
+  "version": "0.0.0"
+}
