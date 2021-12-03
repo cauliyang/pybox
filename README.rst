@@ -8,19 +8,19 @@ Pybox
 |pre-commit| |Black|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/pyboxes.svg
-   :target: https://pypi.org/project/pybox/
+   :target: https://pypi.org/project/pyboxes/
    :alt: PyPI
 .. |Status| image:: https://img.shields.io/pypi/status/pyboxes.svg
-   :target: https://pypi.org/project/pybox/
+   :target: https://pypi.org/project/pyboxes/
    :alt: Status
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/pyboxes
-   :target: https://pypi.org/project/pybox
+   :target: https://pypi.org/project/pyboxes
    :alt: Python Version
 .. |License| image:: https://img.shields.io/pypi/l/pyboxes
    :target: https://opensource.org/licenses/MIT
    :alt: License
 .. |Read the Docs| image:: https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs
-   :target: https://pybox.readthedocs.io/
+   :target: https://pyboxes.readthedocs.io/
    :alt: Read the documentation at https://pyboxes.readthedocs.io/
 .. |Tests| image:: https://github.com/cauliyang/pybox/workflows/Tests/badge.svg
    :target: https://github.com/cauliyang/pybox/actions?workflow=Tests
@@ -49,6 +49,9 @@ Aims
 
 Features
 ------------
+
+.. image:: https://cdn.jsdelivr.net/gh/cauliyang/blog-image@main//img/20211203154400.png
+    :width: 50%
 
 - Google-Driver_:
   - A simple and easy to download files by sharing link of Google Driver.
