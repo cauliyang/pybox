@@ -1,7 +1,8 @@
 """Test cases for the __main__ module."""
 import pytest
 from click.testing import CliRunner
-from pybox import __main__
+
+from pyboxes import __main__
 
 
 @pytest.fixture
