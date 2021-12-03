@@ -47,7 +47,7 @@ furo = ">=2021.11.12"
 codecov = "^2.1.12"
 
 [tool.poetry.scripts]
-pybox = "pybox.__main__:main"
+pybox = "pyboxes.__main__:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
