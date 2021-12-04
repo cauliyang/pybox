@@ -37,8 +37,10 @@ Pybox
 
 .. badges-end
 
+|
+
 .. raw: html
-    <p align="center" <img alt='logo' src='docs/_static/logo.png' width=50% /> </p>
+    <p align="center" <img alt='logo' src='docs/_static/logo.png' width="50%" /> </p>
 
 Aims
 --------
@@ -65,7 +67,7 @@ You can install *Pybox* via pip_ from PyPI_:
 
 .. code:: console
 
-   $ pip install pybox
+   $ pip install pyboxes
 
 
 Usage
