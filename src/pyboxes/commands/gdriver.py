@@ -10,7 +10,7 @@ import click
 from loguru import logger
 
 
-@click.command()
+@click.command(options_metavar="[options]")
 @click.argument("url", type=click.STRING, metavar="<url>")
 @click.argument("name", type=click.STRING, metavar="<name>")
 @click.argument("size", type=click.INT, metavar="<size>")

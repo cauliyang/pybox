@@ -51,7 +51,12 @@ help_message = """This tool include a bunch of useful commands:\n
 2. more to come...
 """
 
-main = MyCLI(help=help_message, context_settings=CONTEXT_SETTINGS)
+main = MyCLI(
+    help=help_message,
+    context_settings=CONTEXT_SETTINGS,
+    subcommand_metavar="<command>",
+    options_metavar="[options]",
+)
 
 if __name__ == "__main__":
     main()
