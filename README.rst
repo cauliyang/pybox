@@ -39,8 +39,10 @@ Pybox
 
 |
 
-.. raw: html
-    <p align="center" <img alt='logo' src='docs/_static/logo.png' width="50%" /> </p>
+.. raw:: html
+
+   <p align="center"><img alt="logo" src="docs/_static/logo.png" width="50%" /></p>
+
 
 Aims
 --------
