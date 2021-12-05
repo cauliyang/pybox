@@ -1,5 +1,5 @@
-.. include:: ../README.rst
-   :end-before: github-only
+.. include:: ../README.md
+    :parser: myst_parser.sphinx_
 
 .. _Contributor Guide: contributing.html
 .. _Usage: usage.html
