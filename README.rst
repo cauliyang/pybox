@@ -1,11 +1,10 @@
 Pybox
 =====
 
-|PyPI| |Status| |Python Version| |License|
+|PyPI| |Status| |Python Version| |Tests| |License|
 
-|Read the Docs| |Tests| |Codecov|
+|Read the Docs| |pre-commit| |Black|  |Codecov|
 
-|pre-commit| |Black|
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/pyboxes.svg
    :target: https://pypi.org/project/pyboxes/
@@ -41,7 +40,7 @@ Pybox
 
 .. raw:: html
 
-   <p align="center"><img alt="logo" src="docs/_static/logo.png" width="50%" /></p>
+   <p align="center"><img alt="logo" src="/docs/_static/logo.png" width="50%"/></p>
 
 
 Aims
@@ -109,7 +108,7 @@ Credits
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/cauliyang/pybox/issues
 .. _pip: https://pip.pypa.io/
+.. _Google-Driver: https://www.google.com/drive/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://pybox.readthedocs.io/en/latest/usage.html
-.. _Google-Driver: https://www.google.com/drive/

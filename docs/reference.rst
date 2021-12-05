@@ -5,5 +5,5 @@ Reference
 pybox
 -----
 
-.. automodule:: pybox
+.. automodule:: pyboxes
    :members:
