@@ -66,7 +66,13 @@ If you encounter any problems, please [file an issue][] along with a detailed de
 
 ## Credits
 
+## Credits
+
+This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutter][] template.
+
 [//]: # "link"
+[cjolowicz]: https://github.com/cjolowicz
+[hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [mit license]: https://opensource.org/licenses/MIT
 [pypi]: https://pypi.org/
 [file an issue]: https://github.com/cauliyang/pybox/issues
