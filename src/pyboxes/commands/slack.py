@@ -59,7 +59,7 @@ def cli(webhook_url: str, message: str, message_file: TextIO, log_level: str) ->
     if current_message == "":
         logger.error("No message provided")
         raise SystemExit
-
+    current_message = current_message.replace("\\n", "\n")
     data = {
         "blocks": [
             {"type": "header", "text": {"type": "plain_text", "text": current_time}},
