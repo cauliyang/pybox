@@ -10,3 +10,6 @@ Command
 
 .. click:: pyboxes.commands.gdriver:cli
     :prog: gdriver
+
+.. click:: pyboxes.commands.slack:cli
+    :prog: slack

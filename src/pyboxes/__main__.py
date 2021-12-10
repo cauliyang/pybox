@@ -48,7 +48,8 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"], max_content_width=15
 help_message = """This tool include a bunch of useful commands:\n
 \b
 1. Google Driver downloader
-2. more to come...
+2. Send message to Slack
+3. more to come...
 """
 
 main = MyCLI(

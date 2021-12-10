@@ -29,7 +29,31 @@
 
 <summary> Google Driver</summary>
 
-- [Google-Driver][]: A simple and easy to download files by sharing link of Google Driver.
+[Google-Driver][]: A simple and easy to download files by sharing link of Google Driver.
+
+For example:
+
+```bash
+$ pybox gdriver <url> <name> <size>
+```
+
+Detailed usage please see [Usage Documentation][]
+
+</details>
+
+<details>
+
+<summary> Slack</summary>
+
+[Slack][]: A simple and easy to send message to Slack Channel.
+
+For example:
+
+```bash
+$ pybox slack [options] <webhook-url>
+```
+
+Detailed usage please see [Usage Documentation][]
 
 </details>
 
@@ -66,8 +90,6 @@ If you encounter any problems, please [file an issue][] along with a detailed de
 
 ## Credits
 
-## Credits
-
 This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutter][] template.
 
 [//]: # "link"
@@ -79,4 +101,6 @@ This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutte
 [pip]: https://pip.pypa.io/
 [google-driver]: https://www.google.com/drive/
 [contributor guide]: https://raw.githubusercontent.com/cauliyang/pybox/main/CONTRIBUTING.rst
-[usage]: https://pybox.readthedocs.io/en/latest/usage.html
+[usage]: https://pyboxes.readthedocs.io/en/latest/usage.html
+[slack]: https://slack.com/
+[usage documentation]: https://pyboxes.readthedocs.io/en/latest/usage.html
