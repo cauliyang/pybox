@@ -65,7 +65,7 @@ def cli(webhook_url: str, message: str, message_file: TextIO, log_level: str) ->
             {"type": "header", "text": {"type": "plain_text", "text": current_time}},
             {
                 "type": "section",
-                "text": {"type": "plain_text", "text": current_message},
+                "text": {"type": "mrkdwn", "text": current_message},
             },
         ]
     }
