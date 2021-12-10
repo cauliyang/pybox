@@ -9,7 +9,7 @@ import time
 from typing import TextIO
 
 import click
-import requests
+import requests  # type: ignore
 from loguru import logger
 
 
