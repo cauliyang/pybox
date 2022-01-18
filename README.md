@@ -29,7 +29,7 @@
 
 <summary> Google Driver</summary>
 
-[Google-Driver][]: A simple and easy to download files by sharing link of Google Driver.
+[Google-Driver]: A simple and easy to download files by sharing link of Google Driver.
 
 For example:
 
@@ -37,7 +37,7 @@ For example:
 $ pybox gdriver <url> <name> <size>
 ```
 
-Detailed usage please see [Usage Documentation][]
+Detailed usage please see [Usage Documentation]
 
 </details>
 
@@ -45,7 +45,7 @@ Detailed usage please see [Usage Documentation][]
 
 <summary> Slack</summary>
 
-[Slack][]: A simple and easy to send message to Slack Channel.
+[Slack]: A simple and easy to send message to Slack Channel.
 
 For example:
 
@@ -53,7 +53,7 @@ For example:
 $ pybox slack [options] <webhook-url>
 ```
 
-Detailed usage please see [Usage Documentation][]
+Detailed usage please see [Usage Documentation]
 
 </details>
 
@@ -61,7 +61,7 @@ Detailed usage please see [Usage Documentation][]
 
 ## Installation
 
-You can install _Pybox_ via [pip][] from [PyPI][]:
+You can install _Pybox_ via [pip] from [PyPI]:
 
 ```bash
 $ pip install pyboxes
@@ -73,24 +73,24 @@ $ pip install pyboxes
 $ pybox -h
 ```
 
-Please see the Command-line Reference [Usage][] for details.
+Please see the Command-line Reference [Usage] for details.
 
 ## Contributing
 
-Contributions are very welcome. To learn more, see the [Contributor Guide][].
+Contributions are very welcome. To learn more, see the [Contributor Guide].
 
 ## License
 
-Distributed under the terms of the [MIT license][],
+Distributed under the terms of the [MIT license],
 _Pybox_ is free and open source software.
 
 ## Issues
 
-If you encounter any problems, please [file an issue][] along with a detailed description.
+If you encounter any problems, please [file an issue] along with a detailed description.
 
 ## Credits
 
-This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutter][] template.
+This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
 [//]: # "link"
 [cjolowicz]: https://github.com/cjolowicz
@@ -100,7 +100,10 @@ This project was generated from [@cjolowicz][]'s [Hypermodern Python Cookiecutte
 [file an issue]: https://github.com/cauliyang/pybox/issues
 [pip]: https://pip.pypa.io/
 [google-driver]: https://www.google.com/drive/
-[contributor guide]: https://raw.githubusercontent.com/cauliyang/pybox/main/CONTRIBUTING.rst
 [usage]: https://pyboxes.readthedocs.io/en/latest/usage.html
 [slack]: https://slack.com/
+
+% github-only
+
+[contributor guide]: CONTRIBUTING.rst
 [usage documentation]: https://pyboxes.readthedocs.io/en/latest/usage.html
