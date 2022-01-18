@@ -1,3 +1,5 @@
+# <center> Pybox
+
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/cauliyang/pybox/main/docs/_static/logo.png" width=50% alt="logo">
@@ -103,7 +105,9 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 [usage]: https://pyboxes.readthedocs.io/en/latest/usage.html
 [slack]: https://slack.com/
 
-% github-only
+```github-only
 
-[contributor guide]: CONTRIBUTING.rst
+```
+
+[contributor guide]: CONTRIBUTING.md
 [usage documentation]: https://pyboxes.readthedocs.io/en/latest/usage.html

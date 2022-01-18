@@ -1,9 +1,9 @@
-Reference
-=========
+# Reference
 
+## pybox
 
-pybox
------
+```{eval-rst}
 
 .. automodule:: pyboxes
    :members:
+```
