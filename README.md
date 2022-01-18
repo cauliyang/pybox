@@ -1,4 +1,4 @@
-# <center> Pybox
+# Pybox
 
 <div align="center">
 
