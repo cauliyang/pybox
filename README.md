@@ -35,7 +35,7 @@
 
 For example:
 
-```bash
+```console
 $ pybox gdriver <url> <name> <size>
 ```
 
@@ -51,7 +51,7 @@ Detailed usage please see [Usage Documentation]
 
 For example:
 
-```bash
+```console
 $ pybox slack [options] <webhook-url>
 ```
 
@@ -65,13 +65,13 @@ Detailed usage please see [Usage Documentation]
 
 You can install _Pybox_ via [pip] from [PyPI]:
 
-```bash
+```console
 $ pip install pyboxes
 ```
 
 ## Usage
 
-```bash
+```console
 $ pybox -h
 ```
 
