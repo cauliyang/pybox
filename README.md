@@ -4,16 +4,26 @@
 
 <img src="https://raw.githubusercontent.com/cauliyang/pybox/main/docs/_static/logo.png" width=50% alt="logo">
 
-[![pypi](https://img.shields.io/pypi/v/pyboxes.svg)](https://pypi.org/project/pyboxes/)
-[![status](https://img.shields.io/pypi/status/pyboxes.svg)](https://pypi.org/project/pyboxes/)
-[![python version](https://img.shields.io/pypi/pyversions/pyboxes)](https://pypi.org/project/pyboxes)
-[![license](https://img.shields.io/pypi/l/pyboxes)](https://opensource.org/licenses/MIT)
-[![read the docs](https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs)](https://pyboxes.readthedocs.io/)
+[![pypi](https://img.shields.io/pypi/v/pyboxes.svg)][pypi_]
+[![status](https://img.shields.io/pypi/status/pyboxes.svg)][status]
+[![python version](https://img.shields.io/pypi/pyversions/pyboxes)][python version]
+[![license](https://img.shields.io/pypi/l/pyboxes)][license]
+[![read the docs](https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs)][read the docs]
 
-[![test](https://github.com/cauliyang/pybox/workflows/Tests/badge.svg)](https://github.com/cauliyang/pybox/actions?workflow=Tests)
-[![codecov](https://codecov.io/gh/cauliyang/pybox/branch/main/graph/badge.svg)](https://codecov.io/gh/cauliyang/pybox)
-[![precommit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![test](https://github.com/cauliyang/pybox/workflows/Tests/badge.svg)][test]
+[![codecov](https://codecov.io/gh/cauliyang/pybox/branch/main/graph/badge.svg)][codecov]
+[![precommit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][precommit]
+[![black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
+
+[pypi_]: https://pypi.org/project/pyboxes/
+[status]: https://pypi.org/project/pyboxes/
+[python version]: https://pypi.org/project/pyboxes/
+[license]: https://opensource.org/licenses/MIT
+[read the docs]: https://pyboxes.readthedocs.io/
+[test]: https://github.com/cauliyang/pybox/actions?workflow=Tests
+[codecov]: https://codecov.io/gh/cauliyang/pybox
+[precommit]: https://github.com/pre-commit/pre-commit
+[black]: https://github.com/psf/black
 
 </div>
 
