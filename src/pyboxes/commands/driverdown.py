@@ -64,7 +64,7 @@ def downloadfiles(service, dowid, name, dfilespath):
         f.write(fh.read())
 
 
-def login(json_file, creds):
+def login(json_file: str, creds: str, code: bool) -> str:
     """Log in to Google Drive."""
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -81,7 +81,10 @@ def login(json_file, creds):
             flow = InstalledAppFlow.from_client_secrets_file(
                 json_file, SCOPES
             )  # credentials.json download from drive API
-            creds = flow.run_local_server()
+            if code:
+                creds = flow.run_console()
+            else:
+                creds = flow.run_local_server()
         # Save the credentials for the next run
         with open(token_pickle, "wb") as token:
             pickle.dump(creds, token)
@@ -132,14 +135,18 @@ def download_folders(folder_id, service):
 @click.argument("json-file", type=click.Path(exists=True), metavar="<json>")
 @click.option("-i", "--fid", type=click.STRING, metavar="<folder_id>")
 @click.option("-f", "--fids", type=click.Path(exists=True), metavar="<folder_ids>")
-def cli(json_file: str, fid: str, fids: str) -> None:
+@click.option("--code", is_flag=True, metavar="<code>")
+def cli(json_file: str, fid: str, fids: str, code: bool) -> None:
     """Download files in folders in Google Drive.
 
     \n
     \b
     Usage:
-    python driverdown <json-file> -i <folder_id>
-    python driverdown <json-file> -f <folder_ids>
+    pybox driverdown <json-file> -i <folder_id>
+    pybox driverdown <json-file> -f <folder_ids>
+
+    If you use server to download files, you may need to supress browser open:
+    pybox driverdown <json-file> -i <folder_id> --code
 
     \b
     folder_id:  id of the folder to download.
@@ -149,7 +156,7 @@ def cli(json_file: str, fid: str, fids: str) -> None:
         raise click.UsageError("You must specify a folder id or a file ids file.")
 
     creds = None
-    creds = login(json_file, creds)
+    creds = login(json_file, creds, code)
     service = build("drive", "v3", credentials=creds)
     # Call the Drive v3 API
 
