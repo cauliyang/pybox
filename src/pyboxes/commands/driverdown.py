@@ -148,7 +148,7 @@ def cli(json_file: str, fid: str, fids: str, code: bool) -> None:
     pybox driverdown <json-file> -i <folder_id>
     pybox driverdown <json-file> -f <folder_ids>
 
-    If you use server to download files, you may need to supress browser open:
+    If you use server to download files, you may need to supress browser open:\n
     pybox driverdown <json-file> -i <folder_id> --code
 
     \b
