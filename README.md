@@ -43,10 +43,22 @@
 
 [Google-Driver]: A simple and easy to download files by sharing link of Google Driver.
 
+### Feature 1
+
+Download single file by sharing link of Google Driver.
+
 For example:
 
 ```console
 $ pybox gdriver <url> <name> <size>
+```
+
+### Feature 2
+
+Download files in a folder by client id and folder id.
+
+```console
+$ pybox driverdown <client_id> <folder_id>
 ```
 
 Detailed usage please see [Usage Documentation]

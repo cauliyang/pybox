@@ -12,10 +12,10 @@ import os
 import pickle
 
 import click
-from apiclient.http import MediaIoBaseDownload
-from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
+from apiclient.http import MediaIoBaseDownload  # type: ignore
+from google.auth.transport.requests import Request  # type: ignore
+from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
+from googleapiclient.discovery import build  # type: ignore
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -64,7 +64,7 @@ def downloadfiles(service, dowid, name, dfilespath):
         f.write(fh.read())
 
 
-def login(json_file):
+def login(json_file, creds):
     """Log in to Google Drive."""
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -85,24 +85,11 @@ def login(json_file):
         # Save the credentials for the next run
         with open(token_pickle, "wb") as token:
             pickle.dump(creds, token)
+    return creds
 
 
-@click.command(options_metavar="[options]")
-@click.argument("json-file", type=click.Path(exists=True), metavar="<json>")
-@click.argument("fid", type=click.STRING, metavar="<folder_id>")
-def cli(json_file, fid) -> None:
-    """Download files in folders in Google Drive.
-    \b
-    Usage:
-    python driverdown <json-file> <folder_id>
-    """
-    creds = None
-    login(json_file)
-    service = build("drive", "v3", credentials=creds)
-    # Call the Drive v3 API
-
-    folder_id = f"'{fid}'"  # Enter The Downloadable folder ID From Shared Link
-
+def download_folders(folder_id, service):
+    """Download all files in a folder."""
     results = (
         service.files()
         .list(
@@ -112,6 +99,7 @@ def cli(json_file, fid) -> None:
         )
         .execute()
     )
+
     items = results.get("files", [])
     if not items:
         print("No files found.")
@@ -121,23 +109,58 @@ def cli(json_file, fid) -> None:
             print(f"{item['name']} {item['id']} {item['mimeType']}")
 
             if item["mimeType"] == "application/vnd.google-apps.folder":
-                if not os.path.isdir("Folder"):
-                    os.mkdir("Folder")
-                bfolderpath = os.getcwd() + "/Folder/"
+                if not os.path.isdir(f"Folder_{folder_id}"):
+                    os.mkdir(f"Folder_{folder_id}")
+                bfolderpath = os.getcwd() + f"/Folder_{folder_id}/"
                 if not os.path.isdir(bfolderpath + item["name"]):
                     os.mkdir(bfolderpath + item["name"])
 
                 folderpath = bfolderpath + item["name"]
                 listfolders(service, item["id"], folderpath)
             else:
-                if not os.path.isdir("Folder"):
-                    os.mkdir("Folder")
-                bfolderpath = os.getcwd() + "/Folder/"
+                if not os.path.isdir(f"Folder_{folder_id}"):
+                    os.mkdir(f"Folder_{folder_id}")
+                bfolderpath = os.getcwd() + f"/Folder_{folder_id}/"
                 if not os.path.isdir(bfolderpath + item["name"]):
                     os.mkdir(bfolderpath + item["name"])
 
                 filepath = bfolderpath + item["name"]
                 downloadfiles(service, item["id"], item["name"], filepath)
+
+
+@click.command(options_metavar="[options]")
+@click.argument("json-file", type=click.Path(exists=True), metavar="<json>")
+@click.option("-i", "--fid", type=click.STRING, metavar="<folder_id>")
+@click.option("-f", "--fids", type=click.Path(exists=True), metavar="<folder_ids>")
+def cli(json_file: str, fid: str, fids: str) -> None:
+    """Download files in folders in Google Drive.
+
+    \n
+    \b
+    Usage:
+    python driverdown <json-file> -i <folder_id>
+    python driverdown <json-file> -f <folder_ids>
+
+    \b
+    folder_id:  id of the folder to download.
+    folder_ids: a file contains a list of folder ids.
+    """
+    if not fid and not fids:
+        raise click.UsageError("You must specify a folder id or a file ids file.")
+
+    creds = None
+    creds = login(json_file, creds)
+    service = build("drive", "v3", credentials=creds)
+    # Call the Drive v3 API
+
+    if fid:
+        folder_id = f"'{fid}'"  # Enter The Downloadable folder ID From Shared Link
+        download_folders(folder_id, service)
+    else:
+        with open(fids) as f:
+            for line in f:
+                folder_id = f"'{line.strip()}'"
+                download_folders(folder_id, service)
 
 
 if __name__ == "__main__":
