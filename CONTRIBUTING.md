@@ -1,7 +1,7 @@
 # Contributor Guide
 
 Thank you for your interest in improving this project.
-This project is open-source under the [{{cookiecutter.license.replace("-", " ")}} license] and
+This project is open-source under the [MIT license] and
 welcomes contributions in the form of bug reports, feature requests, and pull requests.
 
 Here is a list of important resources for contributors:
@@ -11,12 +11,12 @@ Here is a list of important resources for contributors:
 - [Issue Tracker]
 - [Code of Conduct]
 
-[{{cookiecutter.license.replace("-", " ")}} license]: https://opensource.org/licenses/{{cookiecutter.license}}
-[source code]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}
-[documentation]: https://{{cookiecutter.project_name}}.readthedocs.io/
-[issue tracker]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
+[mit license]: https://opensource.org/licenses/MIT
+[source code]: https://github.com/cauliyang/pybox
+[documentation]: https://pyboxes.readthedocs.io/
+[issue tracker]: https://github.com/cauliyang/pybox/issues
 
-# How to report a bug
+## How to report a bug
 
 Report bugs on the [Issue Tracker].
 
@@ -31,11 +31,11 @@ When filing an issue, make sure to answer these questions:
 The best way to get your bug fixed is to provide a test case,
 and/or steps to reproduce the issue.
 
-# How to request a feature
+## How to request a feature
 
 Request features on the [Issue Tracker].
 
-# How to set up your development environment
+## How to set up your development environment
 
 You need Python 3.7+ and the following tools:
 
@@ -61,7 +61,7 @@ $ poetry run {{cookiecutter.project_name}}
 [nox]: https://nox.thea.codes/
 [nox-poetry]: https://nox-poetry.readthedocs.io/
 
-# How to test the project
+## How to test the project
 
 Run the full test suite:
 
@@ -87,7 +87,7 @@ and are written using the [pytest] testing framework.
 
 [pytest]: https://pytest.readthedocs.io/
 
-# How to submit changes
+## How to submit changes
 
 Open a [pull request] to submit changes to this project.
 
@@ -108,7 +108,7 @@ $ nox --session=pre-commit -- install
 It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
-[pull request]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/pulls
+[pull request]: https://github.com/cauliyang/pybox/pulls
 
 <!-- github-only -->
 

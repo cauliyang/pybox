@@ -18,5 +18,5 @@ reference
 contributing
 Code of Conduct <codeofconduct>
 License <license>
-Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
+Changelog <https://github.com/cauliyang/pybox/releases>
 ```
