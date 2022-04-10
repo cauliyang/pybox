@@ -27,25 +27,28 @@
 
 </div>
 
-## 💪Aims
+## 💪 Aims
 
 ![feature1](https://cdn.jsdelivr.net/gh/cauliyang/blog-image@main//img/20211205150625.png)
 
 - **Simple**: A simple and easy to use Python library for many annoy task.
 - **Easy to use**: Easy to use, you can use it in your project.
-- **extendable**: Extendable, you can add your own function easily.
+- **Extendable**: Extendable, you can add your own function easily.
 
-## 🤩Features
+## 🤩 Features
+
+| Feature         | Description                                         |
+| --------------- | --------------------------------------------------- |
+| [Google-Driver] | A simple and easy to download files by sharing link |
+| [Slack]         | A simple and easy to send message to Slack Channel  |
+
+Concrete Information can be explored below:
 
 <details>
 
-<summary> Google Driver</summary>
+<summary> Google Driver </summary>
 
-[Google-Driver]: A simple and easy to download files by sharing link of Google Driver.
-
-### Feature 1
-
-Download single file by sharing link of Google Driver.
+**Download single file by sharing link of Google Driver.**
 
 For example:
 
@@ -53,9 +56,7 @@ For example:
 $ pybox gdriver <url> <name> <size>
 ```
 
-### Feature 2
-
-Download files in a folder by client id and folder id.
+**Download files in a folder by client id and folder id.**
 
 ```console
 $ pybox driverdown <client_id> <folder_id>
@@ -67,9 +68,7 @@ Detailed usage please see [Usage Documentation]
 
 <details>
 
-<summary> Slack</summary>
-
-[Slack]: A simple and easy to send message to Slack Channel.
+<summary> Slack </summary>
 
 For example:
 
@@ -83,7 +82,7 @@ Detailed usage please see [Usage Documentation]
 
 - More to come...
 
-## 🧐Installation
+## 🧐 Installation
 
 You can install _Pybox_ via [pip] from [PyPI]:
 
@@ -91,7 +90,7 @@ You can install _Pybox_ via [pip] from [PyPI]:
 $ pip install pyboxes
 ```
 
-## 📖Usage
+## 📖 Usage
 
 ```console
 $ pybox -h
@@ -99,20 +98,20 @@ $ pybox -h
 
 Please see the Command-line Reference [Usage] for details.
 
-## 🤗Contributing
+## 🤗 Contributing
 
 Contributions are very welcome. To learn more, see the [Contributor Guide].
 
-## 🤖License
+## 🤖 License
 
 Distributed under the terms of the [MIT license],
 _Pybox_ is free and open source software.
 
-## 🤔Issues
+## 🤔 Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
 
-## 🥳Credits
+## 🥳 Credits
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
