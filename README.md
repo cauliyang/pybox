@@ -1,5 +1,3 @@
-
-
 <div align="center">
 
 # Pybox
@@ -31,11 +29,11 @@
 
 ## 💪 Aims
 
-[![asciicast](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42.svg)](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42)
-
 - **Simple**: A simple and easy to use Python library for many annoy task.
 - **Easy to use**: Easy to use, you can use it in your project.
 - **Extendable**: Extendable, you can add your own function easily.
+
+[![asciicast](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42.svg)](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42)
 
 ## 🤩 Features
 

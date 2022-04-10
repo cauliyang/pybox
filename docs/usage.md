@@ -9,8 +9,11 @@
 # Command
 
 ```{eval-rst}
-.. click:: pyboxes.commands.gdriver:cli
-    :prog: gdriver
+.. click:: pyboxes.commands.gfile:cli
+    :prog: gfile
+
+.. click:: pyboxes.commands.gfolder:cli
+    :prog: gfolder
 
 .. click:: pyboxes.commands.slack:cli
     :prog: slack

@@ -54,7 +54,7 @@ or the command-line interface:
 
 ```console
 $ poetry run python
-$ poetry run {{cookiecutter.project_name}}
+$ poetry run pybox
 ```
 
 [poetry]: https://python-poetry.org/

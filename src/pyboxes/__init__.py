@@ -10,5 +10,8 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 
 from .__main__ import main
+from .commands import gfile
+from .commands import gfolder
+from .commands import slack
 
-__all__ = ["__version__", "main"]
+__all__ = ["__version__", "main", "gfile", "gfolder", "slack"]
