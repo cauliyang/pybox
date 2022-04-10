@@ -13,6 +13,7 @@ Reference: https://codelabs.developers.google.com/codelabs/gsuite-apis-intro/#0
 import io
 import os
 import pickle
+from typing import Optional
 
 import click
 from apiclient.http import MediaIoBaseDownload  # type: ignore
@@ -67,7 +68,7 @@ def downloadfiles(service, dowid, name, dfilespath):
         f.write(fh.read())
 
 
-def login(json_file: str, creds: str, code: bool) -> str:
+def login(json_file: str, creds: Optional[str], code: bool) -> str:
     """Log in to Google Drive."""
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
