@@ -59,8 +59,8 @@ def cli(url: str, out: str, size: str, url_file: str) -> None:
     the large file : file size > 100mb -> size parameters: l
     the small file : file size < 100mb -> size parameters: s
     Usage:
-    pybox gdriver -u https://drive.google.com/file/d/1-2-3-4-5/view?usp=sharing l
-    pybox gdriver -f url-file.txt l
+    pybox gfile -u https://drive.google.com/file/d/1-2-3-4-5/view?usp=sharing l
+    pybox gfile -f url-file.txt l
     """
     if not url and not url_file:
         logger.error("You need to provide a url or a url file")

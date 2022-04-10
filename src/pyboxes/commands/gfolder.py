@@ -4,8 +4,7 @@
 Reference: https://codelabs.developers.google.com/codelabs/gsuite-apis-intro/#0
 
 
-@Filename:    driver_down.py
-@Author:      YangyangLi
+@Filename:    gfolder.py
 @contact:     li002252@umn.edu
 @license:     MIT Licence
 @Time:        2/22/22 3:55 PM
@@ -13,48 +12,51 @@ Reference: https://codelabs.developers.google.com/codelabs/gsuite-apis-intro/#0
 import io
 import os
 import pickle
+from typing import Any
+from typing import Dict
 from typing import Optional
 
 import click
 from apiclient.http import MediaIoBaseDownload  # type: ignore
 from google.auth.transport.requests import Request  # type: ignore
+from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
 from googleapiclient.discovery import build  # type: ignore
+from loguru import logger
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 
 
 # To list folders
-def listfolders(service, filid, des):
+def listfolders(service: Any, fileid: str, des: str) -> Dict[str, Any]:
     """List files in a folder."""
     results = (
         service.files()
         .list(
             pageSize=1000,
-            q="'" + filid + "'" + " in parents",
+            q="'" + fileid + "'" + " in parents",
             fields="nextPageToken, files(id, name, mimeType)",
         )
         .execute()
     )
-    # logging.debug(folder)
     folder = results.get("files", [])
     for item in folder:
         if str(item["mimeType"]) == "application/vnd.google-apps.folder":
             if not os.path.isdir(des + "/" + item["name"]):
                 os.mkdir(path=des + "/" + item["name"])
-            print(item["name"])
+            logger.info(item["name"])
             listfolders(
                 service, item["id"], des + "/" + item["name"]
             )  # LOOP un-till the files are found
         else:
             downloadfiles(service, item["id"], item["name"], des)
-            print(item["name"])
+            logger.info(item["name"])
     return folder
 
 
 # To Download Files
-def downloadfiles(service, dowid, name, dfilespath):
+def downloadfiles(service: Any, dowid: str, name: str, dfilespath: str) -> None:
     """Download a file's content."""
     request = service.files().get_media(fileId=dowid)
     fh = io.BytesIO()
@@ -62,13 +64,13 @@ def downloadfiles(service, dowid, name, dfilespath):
     done = False
     while done is False:
         status, done = downloader.next_chunk()
-        print("Download %d%%." % int(status.progress() * 100))
+        logger.info("Download %d%%." % int(status.progress() * 100))
     with open(dfilespath + "/" + name, "wb") as f:
         fh.seek(0)
         f.write(fh.read())
 
 
-def login(json_file: str, creds: Optional[str], code: bool) -> str:
+def login(json_file: str, creds: Optional[Credentials], code: bool) -> str:
     """Log in to Google Drive."""
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -95,7 +97,7 @@ def login(json_file: str, creds: Optional[str], code: bool) -> str:
     return creds
 
 
-def download_folders(folder_id, service):
+def download_folders(folder_id: str, service: Any) -> None:
     """Download all files in a folder."""
     results = (
         service.files()
@@ -109,11 +111,11 @@ def download_folders(folder_id, service):
 
     items = results.get("files", [])
     if not items:
-        print("No files found.")
+        logger.info("No files found.")
     else:
-        print("Files:")
+        logger.info("Files:")
         for item in items:
-            print(f"{item['name']} {item['id']} {item['mimeType']}")
+            logger.info(f"{item['name']} {item['id']} {item['mimeType']}")
 
             if item["mimeType"] == "application/vnd.google-apps.folder":
                 if not os.path.isdir(f"Folder_{folder_id}"):
@@ -146,11 +148,11 @@ def cli(json_file: str, fid: str, fids: str, code: bool) -> None:
     \n
     \b
     Usage:
-    pybox driverdown <json-file> -i <folder_id>
-    pybox driverdown <json-file> -f <folder_ids>
+    pybox gfolder <json-file> -i <folder_id>
+    pybox gfolder <json-file> -f <folder_ids>
 
     If you use server to download files, you may need to supress browser open:\n
-    pybox driverdown <json-file> -i <folder_id> --code
+    pybox gfolder <json-file> -i <folder_id> --code
 
     \b
     folder_id:  id of the folder to download.
