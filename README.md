@@ -29,7 +29,7 @@
 
 ## 💪 Aims
 
-![feature1](https://cdn.jsdelivr.net/gh/cauliyang/blog-image@main//img/20211205150625.png)
+[![asciicast](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42.svg)](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42)
 
 - **Simple**: A simple and easy to use Python library for many annoy task.
 - **Easy to use**: Easy to use, you can use it in your project.
@@ -46,7 +46,7 @@ Concrete Information can be explored below:
 
 <details>
 
-<summary> Google Driver </summary>
+<summary> 1. Google Driver </summary>
 <br>
 
 **Download single file by sharing link of Google Driver.**
@@ -69,7 +69,7 @@ Detailed usage please see [Usage Documentation]
 
 <details>
 
-<summary> Slack </summary>
+<summary> 2. Slack </summary>
 <br>
 For example:
 
