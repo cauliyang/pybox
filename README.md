@@ -54,13 +54,13 @@ Concrete Information can be explored below:
 For example:
 
 ```console
-$ pybox gdriver <url> <name> <size>
+$ pybox gfile <url> <name> <size>
 ```
 
 **Download files in a folder by client id and folder id.**
 
 ```console
-$ pybox driverdown <client_id> <folder_id>
+$ pybox gfolder <client_id> <folder_id>
 ```
 
 Detailed usage please see [Usage Documentation]
