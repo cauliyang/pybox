@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyboxes"
-version = "1.2.2"
+version = "2.0.0"
 description = "Pyboxes"
 authors = ["yangli <li002252@umn.edu>"]
 license = "MIT"
@@ -10,6 +10,9 @@ repository = "https://github.com/cauliyang/pybox"
 documentation = "https://pyboxes.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
 ]
 
 [tool.poetry.urls]

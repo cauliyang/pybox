@@ -129,5 +129,7 @@ This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter]
 
 <!-- github-only -->
 
+![Alt](https://repobeats.axiom.co/api/embed/d2106d70cd519799cd18f0ca742bb9a4475fce88.svg "Repobeats analytics image")
+
 [contributor guide]: CONTRIBUTING.md
 [usage documentation]: https://pyboxes.readthedocs.io/en/latest/usage.html
