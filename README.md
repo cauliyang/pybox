@@ -47,6 +47,7 @@ Concrete Information can be explored below:
 <details>
 
 <summary> Google Driver </summary>
+<br>
 
 **Download single file by sharing link of Google Driver.**
 
@@ -69,7 +70,7 @@ Detailed usage please see [Usage Documentation]
 <details>
 
 <summary> Slack </summary>
-
+<br>
 For example:
 
 ```console
