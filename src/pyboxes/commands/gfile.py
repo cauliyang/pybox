@@ -11,6 +11,9 @@ import click
 from loguru import logger
 
 
+# TODO: Need to refactor this file.
+
+
 def down_large_size(file_id: str, out: str) -> None:
     """Download large size file."""
     link = (
@@ -47,9 +50,29 @@ def download(field_ids: List[str], size: str, out: str) -> None:
 
 
 @click.command(options_metavar="[options]")
-@click.option("-u", "--url", type=click.STRING, metavar="<url>")
-@click.option("-f", "--url-file", type=click.File("r"), metavar="<url-file>")
-@click.option("-o", "--out", type=click.STRING, metavar="<name>", default="out")
+@click.option(
+    "-u",
+    "--url",
+    type=click.STRING,
+    metavar="<url>",
+    help="the sharing link of the google drive file.",
+)
+@click.option(
+    "-o",
+    "--out",
+    type=click.STRING,
+    metavar="<name>",
+    default="out",
+    show_default=True,
+    help="the output file name.",
+)
+@click.option(
+    "-f",
+    "--url-file",
+    type=click.File("r"),
+    metavar="<url-file>",
+    help="the file contains the sharing link of the google drive file.",
+)
 @click.argument("size", type=click.STRING, metavar="<size>")
 def cli(url: str, out: str, size: str, url_file: str) -> None:
     """Download file in Google Driver. You need to provide the sharing url,
