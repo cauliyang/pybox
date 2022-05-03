@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyboxes"
-version = "2.1.0"
+version = "2.1.1"
 description = "Pyboxes"
 authors = ["yangli <li002252@umn.edu>"]
 license = "MIT"
