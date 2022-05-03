@@ -3,7 +3,7 @@
 
 Download Test Data from https://fastest.fish/test-files
 
-@Filename:    test_request.py
+@Filename:    test_asyncdown.py
 @Author:      YangyangLi
 @contact:     li002252@umn.edu
 @license:     MIT Licence
@@ -24,7 +24,7 @@ def test_cli_url(
     output_file = tmp_path / "test_5m.zip"
     runner = CliRunner()
     result = runner.invoke(
-        pyboxes.main, ["request", "-u", url, "-o", output_file.as_posix()]
+        pyboxes.main, ["asyncdown", "-u", url, "-o", output_file.as_posix()]
     )
     assert result.exit_code == 0
     assert output_file.exists()
@@ -33,14 +33,14 @@ def test_cli_url(
 def test_cli_no_para():
     """Test cli for request with no parameters."""
     runner = CliRunner()
-    result = runner.invoke(pyboxes.main, ["request"])
+    result = runner.invoke(pyboxes.main, ["asyncdown"])
     assert result.exit_code != 0
 
 
 def test_cli_two_para():
     """Test cli for request with conflict parameters."""
     runner = CliRunner()
-    result = runner.invoke(pyboxes.main, ["request", "-u", "link", "-f", "file"])
+    result = runner.invoke(pyboxes.main, ["asyncdown", "-u", "link", "-f", "file"])
     assert result.exit_code != 0
 
 
@@ -57,7 +57,7 @@ def test_cli_url_file(tmp_path):
     )
     runner = CliRunner()
     help_result = runner.invoke(
-        pyboxes.main, ["request", "-f", f"{url_file.as_posix()}"]
+        pyboxes.main, ["asyncdown", "-f", f"{url_file.as_posix()}"]
     )
     assert help_result.exit_code == 0
     assert output_file1.exists()
