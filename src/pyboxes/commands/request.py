@@ -57,8 +57,8 @@ def read_urls(file: str) -> t.Dict[str, str]:
 
 async def worker(urls: t.Dict[str, str], timeout: int) -> None:
     """Download the files in the urls asynchronously."""
-    timeout = ClientTimeout(total=timeout)
-    async with aiohttp.ClientSession(timeout=timeout) as session:
+    client_timeout = ClientTimeout(total=timeout)
+    async with aiohttp.ClientSession(timeout=client_timeout) as session:
         tasks = []
         for filename, url in urls.items():
             tasks.append(download(url, filename, session))
