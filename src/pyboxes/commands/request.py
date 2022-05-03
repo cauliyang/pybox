@@ -37,19 +37,24 @@ def check_exist(filename: str, url: str, urls: t.Dict[str, str]) -> None:
         If the file name starts with '#', it will be ignored.
     """
     if Path(filename).exists():
-        logger.warning(f"{filename} already exists")
+        logger.warning(f"{filename} already exists, will be overwritten")
+
     if not filename.strip().startswith("#"):
+
+        if filename in urls:
+            logger.warning(f"{filename} duplicate in url_files, will be overwritten")
+
         urls[filename] = url
 
 
-def read_urls(file: str) -> t.Dict[str, str]:
+def read_urls(file: t.TextIO) -> t.Dict[str, str]:
     """Read the urls from the file."""
     urls: t.Dict[str, str] = {}
-    for line in open(file):
+    for line in file:
         try:
             filename, url = line.strip().split()
         except ValueError:
-            logger.warning(f"Cannot parse {line!r}")
+            logger.warning(f"Cannot parse {line!r}, skipped")
         else:
             check_exist(filename, url, urls)
     return urls
@@ -92,12 +97,12 @@ async def worker(urls: t.Dict[str, str], timeout: int) -> None:
     show_default=True,
     help="Time out for each download",
 )
-def cli(url: str, out: str, url_file: str, time: int) -> None:
+def cli(url: str, out: str, url_file: t.TextIO, time: int) -> None:
     """Download files in terms of links asynchronously.
 
     \b
     Examples:
-        pybox request -u https://drive.google.com/file/d/1-2-3-4-5/view?usp=sharing  -o book.pdf
+        pybox request -u url-link  -o book.pdf
         pybox request -f url-file.txt
 
     \b
