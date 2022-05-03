@@ -37,10 +37,11 @@
 
 ## 🤩 Features
 
-| Feature         | Description                                         |
-| --------------- | --------------------------------------------------- |
-| [Google-Driver] | A simple and easy to download files by sharing link |
-| [Slack]         | A simple and easy to send message to Slack Channel  |
+| Feature             | Description                                         |
+| ------------------- | --------------------------------------------------- |
+| **[Google-Driver]** | A simple and easy to download files by sharing link |
+| **[Slack]**         | A simple and easy to send message to Slack Channel  |
+| **Aysnc-Download**  | Download multiple files asynchronously              |
 
 Concrete Information can be explored below:
 
@@ -75,6 +76,28 @@ For example:
 
 ```console
 $ pybox slack [options] <webhook-url>
+```
+
+Detailed usage please see [Usage Documentation]
+
+</details>
+
+<details>
+
+<summary> 3. Async Download </summary>
+<br>
+For example:
+
+**Download single file**
+
+```console
+$ pybox asyncdown -u <url> -o <output>
+```
+
+**Download multiple files**
+
+```console
+$ pybox asyncdown -f <url-file>
 ```
 
 Detailed usage please see [Usage Documentation]

@@ -17,4 +17,7 @@
 
 .. click:: pyboxes.commands.slack:cli
     :prog: slack
+
+.. click:: pyboxes.commands.asyncdown:cli
+    :prog: asyncdown
 ```

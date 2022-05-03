@@ -102,8 +102,8 @@ def cli(url: str, out: str, url_file: t.TextIO, time: int) -> None:
 
     \b
     Examples:
-        pybox request -u url-link  -o book.pdf
-        pybox request -f url-file.txt
+        pybox asyncdown -u url-link  -o book.pdf
+        pybox asyncdown -f url-file.txt
 
     \b
     Note:
@@ -116,3 +116,7 @@ def cli(url: str, out: str, url_file: t.TextIO, time: int) -> None:
 
     urls = {out: url} if url else read_urls(url_file)
     asyncio.run(worker(urls, time))
+
+
+if __name__ == "__main__":
+    cli()

@@ -1,4 +1,5 @@
 """Command-line interface."""
+import datetime
 import os
 from typing import Any
 from typing import Dict
@@ -66,6 +67,7 @@ main = MyCLI(
     context_settings=CONTEXT_SETTINGS,
     subcommand_metavar="<command>",
     options_metavar="[options]",
+    epilog=f"Yangyang-Li https://yangyangli.top/ {datetime.datetime.now().year}",
 )
 
 if __name__ == "__main__":

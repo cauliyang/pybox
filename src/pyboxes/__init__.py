@@ -13,5 +13,6 @@ from .__main__ import main
 from .commands import gfile
 from .commands import gfolder
 from .commands import slack
+from .commands import asyncdown
 
-__all__ = ["__version__", "main", "gfile", "gfolder", "slack"]
+__all__ = ["__version__", "main", "gfile", "gfolder", "slack", "asyncdown"]
