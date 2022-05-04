@@ -37,22 +37,17 @@
 
 ## 🤩 Features
 
-| Feature             | Description                                         |
-| ------------------- | --------------------------------------------------- |
-| **[Google-Driver]** | A simple and easy to download files by sharing link |
-| **[Slack]**         | A simple and easy to send message to Slack Channel  |
-| **Aysnc-Download**  | Download multiple files asynchronously              |
+- [A simple and easy to download files by sharing link](#a-simple-and-easy-to-download-files-by-sharing-link)
+- [A simple and easy to send message to Slack Channel](#a-simple-and-easy-to-send-message-to-slack-channel)
+- [Download multiple files asynchronously](#download-multiple-files-asynchronously)
 
-Concrete Information can be explored below:
+## 🚌 Take a tour
 
-<details>
-
-<summary> 1. Google Driver </summary>
-<br>
+### A simple and easy to download files by sharing link
 
 **Download single file by sharing link of Google Driver.**
 
-For example:
+For example:\
 
 ```console
 $ pybox gfile <url> <name> <size>
@@ -66,12 +61,8 @@ $ pybox gfolder <client_id> <folder_id>
 
 Detailed usage please see [Usage Documentation]
 
-</details>
+### A simple and easy to send message to Slack Channel
 
-<details>
-
-<summary> 2. Slack </summary>
-<br>
 For example:
 
 ```console
@@ -80,12 +71,8 @@ $ pybox slack [options] <webhook-url>
 
 Detailed usage please see [Usage Documentation]
 
-</details>
+### Download multiple files asynchronously
 
-<details>
-
-<summary> 3. Async Download </summary>
-<br>
 For example:
 
 **Download single file**
@@ -101,8 +88,6 @@ $ pybox asyncdown -f <url-file>
 ```
 
 Detailed usage please see [Usage Documentation]
-
-</details>
 
 - More to come...
 
