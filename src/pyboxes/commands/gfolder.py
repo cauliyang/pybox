@@ -12,6 +12,7 @@ Reference: https://codelabs.developers.google.com/codelabs/gsuite-apis-intro/#0
 import io
 import os
 import pickle
+import sys
 from typing import Any
 from typing import Dict
 from typing import Optional
@@ -23,6 +24,17 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
 from googleapiclient.discovery import build  # type: ignore
 from loguru import logger
+
+logger.remove()
+logger.add(
+    sys.stdout,
+    format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
+    "<level>{level: <8}</level> | "
+    "<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
+    level="INFO",
+    colorize=True,
+)
+
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ["https://www.googleapis.com/auth/drive"]

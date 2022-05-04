@@ -8,6 +8,7 @@
 @Time:        5/3/22 9:26 AM
 """
 import asyncio
+import sys
 import typing as t
 from pathlib import Path
 
@@ -16,6 +17,16 @@ import aiohttp
 import click
 from aiohttp.client import ClientTimeout
 from loguru import logger
+
+logger.remove()
+logger.add(
+    sys.stdout,
+    format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
+    "<level>{level: <8}</level> | "
+    "<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
+    level="INFO",
+    colorize=True,
+)
 
 
 async def download(url: str, local_filename: str, session: t.Any) -> None:

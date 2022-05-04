@@ -12,6 +12,16 @@ import click
 import requests
 from loguru import logger
 
+logger.remove()
+logger.add(
+    sys.stdout,
+    format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
+    "<level>{level: <8}</level> | "
+    "<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
+    level="INFO",
+    colorize=True,
+)
+
 
 @click.command(options_metavar="[options]")
 @click.argument("webhook-url", type=click.STRING, metavar="<webhook-url>")

@@ -5,10 +5,21 @@
 """the command line interface for pybox."""
 import re
 import subprocess
+import sys
 from typing import List
 
 import click
 from loguru import logger
+
+logger.remove()
+logger.add(
+    sys.stdout,
+    format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | "
+    "<level>{level: <8}</level> | "
+    "<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>",
+    level="INFO",
+    colorize=True,
+)
 
 
 # TODO: Need to refactor this file.
