@@ -40,6 +40,22 @@
 - [A simple and easy to send message to Slack Channel](#a-simple-and-easy-to-send-message-to-slack-channel)
 - [Download multiple files asynchronously](#download-multiple-files-asynchronously)
 
+## 🧐 Installation
+
+You can install _Pybox_ via [pip] from [PyPI]:
+
+```console
+$ pip install pyboxes
+```
+
+## 📖 Usage
+
+```console
+$ pybox -h
+```
+
+Please see the Command-line Reference [Usage] for details.
+
 ## 🚌 Take a tour
 
 ### A simple and easy to download files by sharing link
@@ -89,22 +105,6 @@ $ pybox asyncdown -f <url-file>
 Detailed usage please see [Usage Documentation]
 
 - More to come...
-
-## 🧐 Installation
-
-You can install _Pybox_ via [pip] from [PyPI]:
-
-```console
-$ pip install pyboxes
-```
-
-## 📖 Usage
-
-```console
-$ pybox -h
-```
-
-Please see the Command-line Reference [Usage] for details.
 
 ## 🤗 Contributing
 
