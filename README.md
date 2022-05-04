@@ -24,6 +24,7 @@
 [codecov]: https://codecov.io/gh/cauliyang/pybox
 [precommit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
+[//]: # '<img src="https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42.svg" alt="demo" width=40%>'
 
 </div>
 
@@ -32,8 +33,6 @@
 - **Simple**: A simple and easy to use Python library for many annoy task.
 - **Easy to use**: Easy to use, you can use it in your project.
 - **Extendable**: Extendable, you can add your own function easily.
-
-[![asciicast](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42.svg)](https://asciinema.org/a/vPzWEWZUJ4JUYkQPoj0Wgux42)
 
 ## 🤩 Features
 
@@ -47,7 +46,7 @@
 
 **Download single file by sharing link of Google Driver.**
 
-For example:\
+For example:
 
 ```console
 $ pybox gfile <url> <name> <size>
