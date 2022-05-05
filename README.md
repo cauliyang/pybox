@@ -60,15 +60,13 @@ Please see the Command-line Reference [Usage] for details.
 
 ### A simple and easy to download files by sharing link
 
-**Download single file by sharing link of Google Driver.**
-
-For example:
+1. Download single file by sharing link of Google Driver.
 
 ```console
 $ pybox gfile <url> <name> <size>
 ```
 
-**Download files in a folder by client id and folder id.**
+2. Download files in a folder by client id and folder id.
 
 ```console
 $ pybox gfolder <client_id> <folder_id>
@@ -78,8 +76,6 @@ Detailed usage please see [Usage Documentation]
 
 ### A simple and easy to send message to Slack Channel
 
-For example:
-
 ```console
 $ pybox slack [options] <webhook-url>
 ```
@@ -88,23 +84,19 @@ Detailed usage please see [Usage Documentation]
 
 ### Download multiple files asynchronously
 
-For example:
-
-**Download single file**
+1. Download single file.
 
 ```console
 $ pybox asyncdown -u <url> -o <output>
 ```
 
-**Download multiple files**
+2. Download multiple files.
 
 ```console
 $ pybox asyncdown -f <url-file>
 ```
 
 Detailed usage please see [Usage Documentation]
-
-- More to come...
 
 ## 🤗 Contributing
 
@@ -123,7 +115,6 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 
 This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
 
-[//]: # "link"
 [@cjolowicz]: https://github.com/cjolowicz
 [hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 [mit license]: https://opensource.org/licenses/MIT
