@@ -39,7 +39,7 @@
 - [A simple and easy to download files by sharing link](#a-simple-and-easy-to-download-files-by-sharing-link)
 - [A simple and easy to send message to Slack Channel](#a-simple-and-easy-to-send-message-to-slack-channel)
 - [Download multiple files asynchronously](#download-multiple-files-asynchronously)
-- Download Books from Zlib in terms of Title Will come! 
+- Download Books from Zlib in terms of Title Will come!
 
 ## 🧐 Installation
 
