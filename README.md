@@ -4,9 +4,9 @@
 
 <img src="https://raw.githubusercontent.com/cauliyang/pybox/main/docs/_static/logo.png" width=50% alt="logo">
 
-[![pypi](https://img.shields.io/pypi/v/pyboxes.svg)][pypi_]
-[![status](https://img.shields.io/pypi/status/pyboxes.svg)][pypi_]
-[![python version](https://img.shields.io/pypi/pyversions/pyboxes)][pypi_]
+[![pypi](https://img.shields.io/pypi/v/pyboxes.svg)][pypi status]
+[![status](https://img.shields.io/pypi/status/pyboxes.svg)][pypi status]
+[![python version](https://img.shields.io/pypi/pyversions/pyboxes)][pypi status]
 [![license](https://img.shields.io/pypi/l/pyboxes)][license]
 [![read the docs](https://img.shields.io/readthedocs/pyboxes/latest.svg?label=Read%20the%20Docs)][read the docs]
 
@@ -15,7 +15,7 @@
 [![precommit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][precommit]
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
 
-[pypi_]: https://pypi.org/project/pyboxes/
+[pypi status]: https://pypi.org/project/pyboxes/
 [license]: https://opensource.org/licenses/MIT
 [read the docs]: https://pyboxes.readthedocs.io/
 [test]: https://github.com/cauliyang/pybox/actions?workflow=Tests
