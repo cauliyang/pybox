@@ -1081,7 +1081,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pytest-sugar"
-version = "0.9.4"
+version = "0.9.5"
 description = "pytest-sugar is a plugin for pytest that changes the default look and feel of pytest (e.g. progressbar, show tests that fail instantly)."
 category = "dev"
 optional = false
@@ -1643,7 +1643,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a60f4b614ad82d9506a41209ff1796bb80a22181d38535eabc8e2afcce3a6afb"
+content-hash = "473115c8f70395fc703569b29ef8a71c475b84f4ac6a1f8dc782ba0fa3b572ab"
 
 [metadata.files]
 aiofiles = []
