@@ -221,7 +221,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "classify-imports"
-version = "4.0.2"
+version = "4.1.0"
 description = "Utilities for refactoring imports in python-like syntax."
 category = "dev"
 optional = false
@@ -1121,14 +1121,14 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "reorder-python-imports"
-version = "3.3.0"
+version = "3.8.0"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-classify-imports = "*"
+classify-imports = ">=4.1"
 
 [[package]]
 name = "requests"
