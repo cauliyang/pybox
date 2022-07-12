@@ -221,7 +221,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "classify-imports"
-version = "4.0.2"
+version = "4.1.0"
 description = "Utilities for refactoring imports in python-like syntax."
 category = "dev"
 optional = false
@@ -1121,14 +1121,14 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "reorder-python-imports"
-version = "3.3.0"
+version = "3.8.0"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-classify-imports = "*"
+classify-imports = ">=4.1"
 
 [[package]]
 name = "requests"
@@ -1643,7 +1643,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "473115c8f70395fc703569b29ef8a71c475b84f4ac6a1f8dc782ba0fa3b572ab"
+content-hash = "5e6afc63835353ca73c5fb302898697d9e2e152abbe9c46b589f62eaa2d1187a"
 
 [metadata.files]
 aiofiles = []
