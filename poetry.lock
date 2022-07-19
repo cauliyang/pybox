@@ -1493,7 +1493,7 @@ test = ["pytest", "typing-extensions", "mypy"]
 
 [[package]]
 name = "types-aiofiles"
-version = "0.8.9"
+version = "0.8.10"
 description = "Typing stubs for aiofiles"
 category = "main"
 optional = false
@@ -2627,8 +2627,8 @@ typeguard = [
     {file = "typeguard-2.13.2.tar.gz", hash = "sha256:7e50071590ab997509aa0977609eb5cf9d73d84c1f416cb4fab78b77a9d15326"},
 ]
 types-aiofiles = [
-    {file = "types-aiofiles-0.8.9.tar.gz", hash = "sha256:ed4e35cee4cd7b51da6e6764405ff4d7cf3bd83e0db9db85ef09878e16fe3125"},
-    {file = "types_aiofiles-0.8.9-py3-none-any.whl", hash = "sha256:ab1e27ecb3efe73e3c86d22f327ce00587743b900560a5348d321bc91bcd7c21"},
+    {file = "types-aiofiles-0.8.10.tar.gz", hash = "sha256:d006ed6894c1da9ed148325b80f3b13c45332474ec31335e6342493cf134e6d4"},
+    {file = "types_aiofiles-0.8.10-py3-none-any.whl", hash = "sha256:ced29372faf9fe95a5b617c844b3c10db3b288c85f8fabdd8b58f4cdb0101bcd"},
 ]
 types-requests = [
     {file = "types-requests-2.28.1.tar.gz", hash = "sha256:acd8ed78509d27bdf04cddcc05f7066dfde4d30dd7dba67b808cdb1141d62ffe"},
