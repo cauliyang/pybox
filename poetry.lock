@@ -125,8 +125,8 @@ optional = false
 python-versions = ">=2.7"
 
 [package.extras]
-docs = ["sphinx", "jaraco.packaging (>=8.2)", "rst.linker (>=1.9)"]
-testing = ["pytest", "pytest-flake8", "pytest-cov", "pytest-black (>=0.3.7)", "pytest-mypy", "pytest-checkdocs (>=2.4)", "pytest-enabler (>=1.0.1)"]
+testing = ["pytest-enabler (>=1.0.1)", "pytest-checkdocs (>=2.4)", "pytest-mypy", "pytest-black (>=0.3.7)", "pytest-cov", "pytest-flake8", "pytest"]
+docs = ["rst.linker (>=1.9)", "jaraco.packaging (>=8.2)", "sphinx"]
 
 [[package]]
 name = "bandit"
@@ -709,10 +709,10 @@ python-versions = ">=3.6"
 uc-micro-py = "*"
 
 [package.extras]
-benchmark = ["pytest", "pytest-benchmark"]
-dev = ["pre-commit", "isort", "flake8", "black"]
-doc = ["sphinx", "sphinx-book-theme", "myst-parser"]
-test = ["coverage", "pytest", "pytest-cov"]
+test = ["pytest-cov", "pytest", "coverage"]
+doc = ["myst-parser", "sphinx-book-theme", "sphinx"]
+dev = ["black", "flake8", "isort", "pre-commit"]
+benchmark = ["pytest-benchmark", "pytest"]
 
 [[package]]
 name = "livereload"
@@ -739,7 +739,7 @@ colorama = {version = ">=0.3.4", markers = "sys_platform == \"win32\""}
 win32-setctime = {version = ">=1.0.0", markers = "sys_platform == \"win32\""}
 
 [package.extras]
-dev = ["colorama (>=0.3.4)", "docutils (==0.16)", "flake8 (>=3.7.7)", "tox (>=3.9.0)", "pytest (>=4.6.2)", "pytest-cov (>=2.7.1)", "black (>=19.10b0)", "isort (>=5.1.1)", "Sphinx (>=4.1.1)", "sphinx-autobuild (>=0.7.1)", "sphinx-rtd-theme (>=0.4.3)"]
+dev = ["sphinx-rtd-theme (>=0.4.3)", "sphinx-autobuild (>=0.7.1)", "Sphinx (>=4.1.1)", "isort (>=5.1.1)", "black (>=19.10b0)", "pytest-cov (>=2.7.1)", "pytest (>=4.6.2)", "tox (>=3.9.0)", "flake8 (>=3.7.7)", "docutils (==0.16)", "colorama (>=0.3.4)"]
 
 [[package]]
 name = "markupsafe"
@@ -901,8 +901,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-docs = ["Sphinx (>=4)", "furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-autodoc-typehints (>=1.12)"]
-test = ["appdirs (==1.4.4)", "pytest (>=6)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)"]
+test = ["pytest-mock (>=3.6)", "pytest-cov (>=2.7)", "pytest (>=6)", "appdirs (==1.4.4)"]
+docs = ["sphinx-autodoc-typehints (>=1.12)", "proselint (>=0.10.2)", "furo (>=2021.7.5b38)", "Sphinx (>=4)"]
 
 [[package]]
 name = "pluggy"
@@ -913,8 +913,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-dev = ["pre-commit", "tox"]
-testing = ["pytest", "pytest-benchmark"]
+testing = ["pytest-benchmark", "pytest"]
+dev = ["tox", "pre-commit"]
 
 [[package]]
 name = "pre-commit"
@@ -1339,8 +1339,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-devhelp"
@@ -1351,8 +1351,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-htmlhelp"
@@ -1363,8 +1363,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
-test = ["pytest", "html5lib"]
+test = ["html5lib", "pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-jsmath"
@@ -1375,7 +1375,7 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-test = ["pytest", "flake8", "mypy"]
+test = ["mypy", "flake8", "pytest"]
 
 [[package]]
 name = "sphinxcontrib-qthelp"
@@ -1386,8 +1386,8 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
+lint = ["docutils-stubs", "mypy", "flake8"]
 
 [[package]]
 name = "sphinxcontrib-serializinghtml"
@@ -1415,7 +1415,7 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
+tests = ["cython", "littleutils", "pygments", "typeguard", "pytest"]
 
 [[package]]
 name = "stevedore"
@@ -1501,7 +1501,7 @@ python-versions = "*"
 
 [[package]]
 name = "types-requests"
-version = "2.28.3"
+version = "2.28.4"
 description = "Typing stubs for requests"
 category = "main"
 optional = false
@@ -1535,7 +1535,7 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-test = ["coverage", "pytest", "pytest-cov"]
+test = ["pytest-cov", "pytest", "coverage"]
 
 [[package]]
 name = "uritemplate"
@@ -1594,7 +1594,7 @@ optional = false
 python-versions = ">=3.5"
 
 [package.extras]
-dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
+dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 
 [[package]]
 name = "xdoctest"
@@ -1610,15 +1610,15 @@ Pygments = {version = "*", optional = true, markers = "python_version >= \"3.5.0
 six = "*"
 
 [package.extras]
-all = ["cmake", "codecov", "ninja", "pybind11", "scikit-build", "six", "colorama", "pytest", "pytest-cov", "debugpy", "pytest", "pygments", "pytest", "pytest-cov", "pytest", "pytest-cov", "jupyter-client", "ipython", "debugpy", "ipykernel", "pytest", "debugpy", "debugpy", "typing", "debugpy", "ipython-genutils", "pytest", "pygments", "attrs", "jedi", "jinja2", "jupyter-core", "nbconvert", "pytest-cov", "jupyter-client", "ipython", "ipykernel"]
-all-strict = ["cmake (==3.21.2)", "codecov (==2.0.15)", "ninja (==1.10.2)", "pybind11 (==2.7.1)", "scikit-build (==0.11.1)", "six (==1.11.0)", "colorama (==0.4.1)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "debugpy (==1.3.0)", "pytest (==4.6.0)", "Pygments (==2.0.0)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "jupyter-client (==6.1.5)", "IPython (==7.10.0)", "debugpy (==1.0.0)", "ipykernel (==5.2.0)", "pytest (==4.6.0)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "typing (==3.7.4)", "debugpy (==1.6.0)", "ipython-genutils (==0.2.0)", "pytest (==6.2.5)", "Pygments (==2.4.1)", "attrs (==19.2.0)", "jedi (==0.16)", "jinja2 (==3.0.0)", "jupyter-core (==4.7.0)", "nbconvert (==6.0.0)", "pytest-cov (==3.0.0)", "jupyter-client (==7.0.0)", "IPython (==7.23.1)", "ipykernel (==6.0.0)"]
-colors = ["colorama", "pygments", "pygments"]
-jupyter = ["debugpy", "jupyter-client", "ipython", "debugpy", "ipykernel", "debugpy", "debugpy", "debugpy", "ipython-genutils", "attrs", "jedi", "jinja2", "jupyter-core", "nbconvert", "jupyter-client", "ipython", "ipykernel"]
-optional-strict = ["colorama (==0.4.1)", "debugpy (==1.3.0)", "tomli (==0.2.0)", "Pygments (==2.0.0)", "jupyter-client (==6.1.5)", "IPython (==7.10.0)", "debugpy (==1.0.0)", "ipykernel (==5.2.0)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "debugpy (==1.6.0)", "ipython-genutils (==0.2.0)", "Pygments (==2.4.1)", "attrs (==19.2.0)", "jedi (==0.16)", "jinja2 (==3.0.0)", "jupyter-core (==4.7.0)", "nbconvert (==6.0.0)", "jupyter-client (==7.0.0)", "IPython (==7.23.1)", "ipykernel (==6.0.0)"]
-optional = ["colorama", "debugpy", "tomli", "pygments", "jupyter-client", "ipython", "debugpy", "ipykernel", "debugpy", "debugpy", "debugpy", "ipython-genutils", "pygments", "attrs", "jedi", "jinja2", "jupyter-core", "nbconvert", "jupyter-client", "ipython", "ipykernel"]
+tests = ["pytest-cov", "pytest", "typing", "pytest", "pytest-cov", "pytest", "pytest-cov", "pytest", "pytest", "pytest-cov", "pytest", "scikit-build", "pybind11", "ninja", "codecov", "cmake"]
+tests-strict = ["pytest-cov (==3.0.0)", "pytest (==6.2.5)", "typing (==3.7.4)", "pytest (==4.6.0)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "scikit-build (==0.11.1)", "pybind11 (==2.7.1)", "ninja (==1.10.2)", "codecov (==2.0.15)", "cmake (==3.21.2)"]
 runtime-strict = ["six (==1.11.0)"]
-tests = ["cmake", "codecov", "ninja", "pybind11", "scikit-build", "pytest", "pytest-cov", "pytest", "pytest", "pytest-cov", "pytest", "pytest-cov", "pytest", "typing", "pytest", "pytest-cov"]
-tests-strict = ["cmake (==3.21.2)", "codecov (==2.0.15)", "ninja (==1.10.2)", "pybind11 (==2.7.1)", "scikit-build (==0.11.1)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "pytest (==4.6.0)", "typing (==3.7.4)", "pytest (==6.2.5)", "pytest-cov (==3.0.0)"]
+optional = ["ipykernel", "ipython", "jupyter-client", "nbconvert", "jupyter-core", "jinja2", "jedi", "attrs", "pygments", "ipython-genutils", "debugpy", "debugpy", "debugpy", "ipykernel", "debugpy", "ipython", "jupyter-client", "pygments", "tomli", "debugpy", "colorama"]
+optional-strict = ["ipykernel (==6.0.0)", "IPython (==7.23.1)", "jupyter-client (==7.0.0)", "nbconvert (==6.0.0)", "jupyter-core (==4.7.0)", "jinja2 (==3.0.0)", "jedi (==0.16)", "attrs (==19.2.0)", "Pygments (==2.4.1)", "ipython-genutils (==0.2.0)", "debugpy (==1.6.0)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "ipykernel (==5.2.0)", "debugpy (==1.0.0)", "IPython (==7.10.0)", "jupyter-client (==6.1.5)", "Pygments (==2.0.0)", "tomli (==0.2.0)", "debugpy (==1.3.0)", "colorama (==0.4.1)"]
+jupyter = ["ipykernel", "ipython", "jupyter-client", "nbconvert", "jupyter-core", "jinja2", "jedi", "attrs", "ipython-genutils", "debugpy", "debugpy", "debugpy", "ipykernel", "debugpy", "ipython", "jupyter-client", "debugpy"]
+colors = ["pygments", "pygments", "colorama"]
+all = ["ipykernel", "ipython", "jupyter-client", "pytest-cov", "nbconvert", "jupyter-core", "jinja2", "jedi", "attrs", "pygments", "pytest", "ipython-genutils", "debugpy", "typing", "debugpy", "debugpy", "pytest", "ipykernel", "debugpy", "ipython", "jupyter-client", "pytest-cov", "pytest", "pytest-cov", "pytest", "pygments", "pytest", "debugpy", "pytest-cov", "pytest", "colorama", "six", "scikit-build", "pybind11", "ninja", "codecov", "cmake"]
+all-strict = ["ipykernel (==6.0.0)", "IPython (==7.23.1)", "jupyter-client (==7.0.0)", "pytest-cov (==3.0.0)", "nbconvert (==6.0.0)", "jupyter-core (==4.7.0)", "jinja2 (==3.0.0)", "jedi (==0.16)", "attrs (==19.2.0)", "Pygments (==2.4.1)", "pytest (==6.2.5)", "ipython-genutils (==0.2.0)", "debugpy (==1.6.0)", "typing (==3.7.4)", "debugpy (==1.0.0)", "debugpy (==1.0.0)", "pytest (==4.6.0)", "ipykernel (==5.2.0)", "debugpy (==1.0.0)", "IPython (==7.10.0)", "jupyter-client (==6.1.5)", "pytest (==4.6.0)", "pytest-cov (==2.9.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "Pygments (==2.0.0)", "pytest (==4.6.0)", "debugpy (==1.3.0)", "pytest (==4.6.0)", "pytest-cov (==2.8.1)", "colorama (==0.4.1)", "six (==1.11.0)", "scikit-build (==0.11.1)", "pybind11 (==2.7.1)", "ninja (==1.10.2)", "codecov (==2.0.15)", "cmake (==3.21.2)"]
 
 [[package]]
 name = "yarl"
@@ -1647,7 +1647,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "535dcd1508647407a33d381ed20aefec11a95fc511837711a26b3d786864cbc6"
+content-hash = "78579b3dfd10730b678f5bbd227b046d68fc08da9d681d9ac829212c07213c32"
 
 [metadata.files]
 aiofiles = [
@@ -2631,8 +2631,8 @@ types-aiofiles = [
     {file = "types_aiofiles-0.8.10-py3-none-any.whl", hash = "sha256:ced29372faf9fe95a5b617c844b3c10db3b288c85f8fabdd8b58f4cdb0101bcd"},
 ]
 types-requests = [
-    {file = "types-requests-2.28.3.tar.gz", hash = "sha256:fb9ea69311766967f9e91861211ec7449f6484025b766ea709689c0dbb29d7ba"},
-    {file = "types_requests-2.28.3-py3-none-any.whl", hash = "sha256:66f0e427708588d4dac2f365a0b2c1ad8f31780429fd8ad193fec93139b22112"},
+    {file = "types-requests-2.28.4.tar.gz", hash = "sha256:1b9bedd60e789db62b73a4a5e5f5a78c3106e535ad69faba97b0bbdb1ea36b8f"},
+    {file = "types_requests-2.28.4-py3-none-any.whl", hash = "sha256:3ded964449fbd695ab0f8570828e2fa7cb120c3ebe8cac520e7db5834d2c8e75"},
 ]
 types-urllib3 = [
     {file = "types-urllib3-1.26.14.tar.gz", hash = "sha256:2a2578e4b36341ccd240b00fccda9826988ff0589a44ba4a664bbd69ef348d27"},
