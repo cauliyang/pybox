@@ -28,7 +28,7 @@ google-auth-httplib2 = "^0.1.0"
 google-auth-oauthlib = ">=0.4.6,<0.6.0"
 aiofiles = ">=0.8,<22.2"
 aiohttp = "^3.8.1"
-types-aiofiles = "^0.8.8"
+types-aiofiles = ">=0.8.8,<22.2.0"
 types-requests = "^2.27.25"
 linkify-it-py = "^2.0.0"
 
