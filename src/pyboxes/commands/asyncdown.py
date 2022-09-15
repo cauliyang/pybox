@@ -112,6 +112,7 @@ async def main(urls: t.Dict[str, str], timeout: int, max_workers: int) -> None:
     """Download the files in the urls asynchronously."""
     queue: Queue = Queue()
     generate_work_items_blocking(urls, queue)
+    logger.info(f"Total Task: {queue.qsize()}")
 
     max_workers = min(max_workers, len(urls))
     logger.info(f"Starting {max_workers} workers")
