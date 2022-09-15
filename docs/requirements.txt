@@ -3,4 +3,3 @@ sphinx==5.1.1
 sphinx-click==4.3.0
 myst_parser==0.18.0
 linkify-it-py == 2.0.0
-pyyaml==5.4.1
