@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 """Asynchronous downloader for files in terms of links.
 
-@Filename:    request.py
+@Filename:    asyncdown.py
 @Author:      YangyangLi
 @contact:     li002252@umn.edu
 @license:     MIT Licence
@@ -10,6 +10,7 @@
 import asyncio
 import sys
 import typing as t
+from asyncio import Queue
 from pathlib import Path
 
 import aiofiles
@@ -29,23 +30,12 @@ logger.add(
 )
 
 
-async def download(url: str, local_filename: str, session: t.Any) -> None:
-    """Download a file from `url` and save it locally under `local_filename`."""
-    logger.info(f"Downloading {local_filename}")
-    async with session.get(url) as resp:
-        if resp.status == 200:
-            async with aiofiles.open(local_filename, "wb") as f:
-                async for chunk in resp.content.iter_chunked(1024 * 1024):
-                    await f.write(chunk)
-    logger.success(f"Finished {local_filename}")
-
-
 def check_exist(filename: str, url: str, urls: t.Dict[str, str]) -> None:
     """Check if the file exists in the local directory.
 
     .. note::
-        If the file exists, it will be overwritten.
-        If the file name starts with '#', it will be ignored.
+                    If the file exists, it will be overwritten.
+                    If the file name starts with '#', it will be ignored.
     """
     if Path(filename).exists():
         logger.warning(f"{filename} already exists, will be overwritten")
@@ -71,14 +61,66 @@ def read_urls(file: t.TextIO) -> t.Dict[str, str]:
     return urls
 
 
-async def worker(urls: t.Dict[str, str], timeout: int) -> None:
+class WorkItem:
+    """Work item for the worker."""
+
+    def __init__(self, url: str, output: str) -> None:
+        """Initialize the work item."""
+        self.url = url
+        self.output = output
+
+
+async def download(
+    url: str, local_filename: str, session: aiohttp.ClientSession
+) -> None:
+    """Download a file from `url` and save it locally under `local_filename`."""
+    try:
+        async with session.get(url) as resp:
+            if resp.status == 200:
+                async with aiofiles.open(local_filename, "wb") as f:
+                    async for chunk in resp.content.iter_chunked(1024 * 1024):
+                        await f.write(chunk)
+    except Exception as e:
+        logger.error(f"Error downloading {local_filename}: {e}")
+
+
+async def worker(worker_id: int, queue: Queue, session: aiohttp.ClientSession) -> None:
     """Download the files in the urls asynchronously."""
+    while True:
+        item: WorkItem = await queue.get()
+        logger.info(f"Worker {worker_id} Processing {item.output}")
+        await download(item.url, item.output, session)
+        logger.success(f"Finished {item.output}")
+        queue.task_done()
+
+
+async def generate_work_items_non_blocking(
+    urls: t.Dict[str, str], queue: Queue
+) -> None:
+    """Generate the work items."""
+    for filename, url in urls.items():
+        await queue.put(WorkItem(url, filename))
+
+
+def generate_work_items_blocking(urls: t.Dict[str, str], queue: Queue) -> None:
+    """Generate the work items."""
+    for filename, url in urls.items():
+        queue.put_nowait(WorkItem(url, filename))
+
+
+async def main(urls: t.Dict[str, str], timeout: int, max_workers: int) -> None:
+    """Download the files in the urls asynchronously."""
+    queue: Queue = Queue()
+    generate_work_items_blocking(urls, queue)
+
+    max_workers = min(max_workers, len(urls))
+    logger.info(f"Starting {max_workers} workers")
+
     client_timeout = ClientTimeout(total=timeout)
     async with aiohttp.ClientSession(timeout=client_timeout) as session:
-        tasks = []
-        for filename, url in urls.items():
-            tasks.append(download(url, filename, session))
-        await asyncio.gather(*tasks)
+        _ = [asyncio.create_task(worker(i, queue, session)) for i in range(max_workers)]
+
+        await queue.join()
 
 
 @click.command(options_metavar="[options]")
@@ -104,21 +146,30 @@ async def worker(urls: t.Dict[str, str], timeout: int) -> None:
     "--time",
     type=click.INT,
     metavar="<time-out>",
-    default=40 * 60,
+    default=40,
     show_default=True,
-    help="Time out for each download",
+    help="Time out (min) for each download",
 )
-def cli(url: str, out: str, url_file: t.TextIO, time: int) -> None:
+@click.option(
+    "-w",
+    "--workers",
+    type=click.INT,
+    metavar="<max-worker>",
+    default=128,
+    show_default=True,
+    help="Maximum number of workers",
+)
+def cli(url: str, out: str, url_file: t.TextIO, time: int, workers: int) -> None:
     """Download files in terms of links asynchronously.
 
     \b
     Examples:
-        pybox asyncdown -u url-link  -o book.pdf
-        pybox asyncdown -f url-file.txt
+                    pybox asyncdown -u url-link  -o book.pdf
+                    pybox asyncdown -f url-file.txt
 
     \b
     Note:
-        1. If you want to download multiple files, you can use the url-file.
+                    1. If you want to download multiple files, you can use the url-file.
     """
     if not url and not url_file:
         raise click.BadArgumentUsage("You need to provide a url or a url file")
@@ -126,7 +177,7 @@ def cli(url: str, out: str, url_file: t.TextIO, time: int) -> None:
         raise click.BadArgumentUsage("You can only provide one url or url file")
 
     urls = {out: url} if url else read_urls(url_file)
-    asyncio.run(worker(urls, time))
+    asyncio.run(main(urls, time * 60, workers))
 
 
 if __name__ == "__main__":
