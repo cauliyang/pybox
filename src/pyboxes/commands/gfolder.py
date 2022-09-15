@@ -19,6 +19,7 @@ from typing import Optional
 
 import click
 from apiclient.http import MediaIoBaseDownload  # type: ignore
+from click_help_colors import HelpColorsCommand
 from google.auth.transport.requests import Request  # type: ignore
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
@@ -34,7 +35,6 @@ logger.add(
     level="INFO",
     colorize=True,
 )
-
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -151,7 +151,12 @@ def download_folders(folder_id: str, service: Any) -> None:
                 downloadfiles(service, item["id"], item["name"], filepath)
 
 
-@click.command(options_metavar="[options]")
+@click.command(
+    cls=HelpColorsCommand,
+    help_options_color="green",
+    help_headers_color="blue",
+    options_metavar="[options]",
+)
 @click.argument("json-file", type=click.Path(exists=True), metavar="<json>")
 @click.option("-i", "--fid", type=click.STRING, metavar="<folder_id>")
 @click.option("-f", "--fids", type=click.Path(exists=True), metavar="<folder_ids>")

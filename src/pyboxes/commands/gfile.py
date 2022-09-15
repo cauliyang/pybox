@@ -9,6 +9,7 @@ import sys
 from typing import List
 
 import click
+from click_help_colors import HelpColorsCommand
 from loguru import logger
 
 logger.remove()
@@ -60,7 +61,12 @@ def download(field_ids: List[str], size: str, out: str) -> None:
                 logger.warning(f"failed to download {field_id} {ind=}")
 
 
-@click.command(options_metavar="[options]")
+@click.command(
+    cls=HelpColorsCommand,
+    help_options_color="green",
+    help_headers_color="blue",
+    options_metavar="[options]",
+)
 @click.option(
     "-u",
     "--url",

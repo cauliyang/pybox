@@ -10,6 +10,7 @@ from typing import TextIO
 
 import click
 import requests
+from click_help_colors import HelpColorsCommand
 from loguru import logger
 
 logger.remove()
@@ -23,7 +24,12 @@ logger.add(
 )
 
 
-@click.command(options_metavar="[options]")
+@click.command(
+    cls=HelpColorsCommand,
+    help_options_color="green",
+    help_headers_color="blue",
+    options_metavar="[options]",
+)
 @click.argument("webhook-url", type=click.STRING, metavar="<webhook-url>")
 @click.option(
     "-m",
