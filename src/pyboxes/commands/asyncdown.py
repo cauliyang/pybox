@@ -34,8 +34,8 @@ def check_exist(filename: str, url: str, urls: t.Dict[str, str]) -> None:
     """Check if the file exists in the local directory.
 
     .. note::
-                    If the file exists, it will be overwritten.
-                    If the file name starts with '#', it will be ignored.
+                                    If the file exists, it will be overwritten.
+                                    If the file name starts with '#', it will be ignored.
     """
     if Path(filename).exists():
         logger.warning(f"{filename} already exists, will be overwritten")
@@ -80,8 +80,14 @@ async def download(
                 async with aiofiles.open(local_filename, "wb") as f:
                     async for chunk in resp.content.iter_chunked(1024 * 1024):
                         await f.write(chunk)
+            else:
+                raise RuntimeError(
+                    f"Cannot download {url} with status code {resp.status}"
+                )
     except Exception as e:
         logger.error(f"Error downloading {local_filename}: {e}")
+    else:
+        logger.success(f"Finished {local_filename}")
 
 
 async def worker(worker_id: int, queue: Queue, session: aiohttp.ClientSession) -> None:
@@ -90,7 +96,6 @@ async def worker(worker_id: int, queue: Queue, session: aiohttp.ClientSession) -
         item: WorkItem = await queue.get()
         logger.info(f"Worker {worker_id} Processing {item.output}")
         await download(item.url, item.output, session)
-        logger.success(f"Finished {item.output}")
         queue.task_done()
 
 
@@ -165,12 +170,12 @@ def cli(url: str, out: str, url_file: t.TextIO, time: int, workers: int) -> None
 
     \b
     Examples:
-                    pybox asyncdown -u url-link  -o book.pdf
-                    pybox asyncdown -f url-file.txt
+                                    pybox asyncdown -u url-link  -o book.pdf
+                                    pybox asyncdown -f url-file.txt
 
     \b
     Note:
-                    1. If you want to download multiple files, you can use the url-file.
+                                    1. If you want to download multiple files, you can use the url-file.
     """
     if not url and not url_file:
         raise click.BadArgumentUsage("You need to provide a url or a url file")
