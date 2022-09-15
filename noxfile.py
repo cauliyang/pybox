@@ -8,8 +8,7 @@ from textwrap import dedent
 import nox
 
 try:
-    from nox_poetry import Session
-    from nox_poetry import session
+    from nox_poetry import Session, session
 except ImportError:
     message = f"""\
     Nox failed to import the 'nox-poetry' package.
@@ -186,7 +185,7 @@ def docs_build(session: Session) -> None:
         args.insert(0, "--color")
 
     session.install(".")
-    session.install("sphinx", "sphinx-click", "furo", "myst_parser")
+    session.install("sphinx", "sphinx-click", "furo", "myst_parser", "pyyaml")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
