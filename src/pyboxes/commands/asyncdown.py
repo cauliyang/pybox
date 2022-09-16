@@ -8,6 +8,8 @@
 @Time:        5/3/22 9:26 AM
 """
 import asyncio
+import platform
+import socket
 import sys
 import typing as t
 from asyncio import Queue
@@ -17,6 +19,7 @@ import aiofiles
 import aiohttp
 import click
 from aiohttp.client import ClientTimeout
+from aiohttp.client_reqrep import ClientRequest
 from click_help_colors import HelpColorsCommand
 from loguru import logger
 
@@ -60,6 +63,29 @@ def read_urls(file: t.TextIO) -> t.Dict[str, str]:
         else:
             check_exist(filename, url, urls)
     return urls
+
+
+# Fix issue about Response payload is not completed
+# source: https://github.com/aio-libs/aiohttp/issues/3904#issuecomment-759205696
+
+
+class KeepAliveClientRequest(ClientRequest):
+    """Keep alive client request."""
+
+    async def send(self, conn) -> aiohttp.ClientResponse:
+        """Send request."""
+        socket_keepidle = (
+            socket.TCP_KEEPIDLE
+            if platform.system() == "Linux"
+            else socket.TCP_KEEPALIVE
+        )
+        sock = conn.protocol.transport.get_extra_info("socket")
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+        sock.setsockopt(socket.IPPROTO_TCP, socket_keepidle, 60)
+        sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPINTVL, 2)
+        sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPCNT, 5)
+
+        return await super().send(conn)
 
 
 class WorkItem:
@@ -155,7 +181,12 @@ async def download(
 ) -> None:
     """Download a file from `url` and save it locally under `local_filename`."""
     try:
-        async with session.get(item.url) as resp:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 "
+            "Safari/537.36",
+            "Connection": "keep-alive",
+        }
+        async with session.get(item.url, headers=headers) as resp:
             if resp.status == 200:
                 async with aiofiles.open(item.output, "wb") as f:
                     async for chunk in resp.content.iter_chunked(1024 * 1024):
@@ -208,7 +239,9 @@ async def main(
     logger.info(f"Starting {max_workers} workers")
 
     client_timeout = ClientTimeout(total=timeout)
-    async with aiohttp.ClientSession(timeout=client_timeout) as session:
+    async with aiohttp.ClientSession(
+        request_class=KeepAliveClientRequest, timeout=client_timeout
+    ) as session:
         _ = [
             asyncio.create_task(worker(i, queue, session, summary))
             for i in range(max_workers)
@@ -272,12 +305,12 @@ def cli(
 
     \b
     Examples:
-                    pybox asyncdown -u url-link  -o book.pdf
-                    pybox asyncdown -f url-file.txt
+                                    pybox asyncdown -u url-link  -o book.pdf
+                                    pybox asyncdown -f url-file.txt
 
     \b
     Note:
-                    1. If you want to download multiple files, you can use the url-file.
+                                    1. If you want to download multiple files, you can use the url-file.
     """
     if not url and not url_file:
         raise click.BadArgumentUsage("You need to provide a url or a url file")
