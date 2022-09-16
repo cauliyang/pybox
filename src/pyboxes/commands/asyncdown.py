@@ -190,6 +190,7 @@ async def download(
             if resp.status == 200:
                 async with aiofiles.open(item.output, "wb") as f:
                     async for chunk in resp.content.iter_chunked(1024 * 1024):
+                        await asyncio.sleep(0.001)
                         await f.write(chunk)
             else:
                 raise RuntimeError(
@@ -305,12 +306,12 @@ def cli(
 
     \b
     Examples:
-                                    pybox asyncdown -u url-link  -o book.pdf
-                                    pybox asyncdown -f url-file.txt
+        pybox asyncdown -u url-link  -o book.pdf
+        pybox asyncdown -f url-file.txt
 
     \b
     Note:
-                                    1. If you want to download multiple files, you can use the url-file.
+        1. If you want to download multiple files, you can use the url-file.
     """
     if not url and not url_file:
         raise click.BadArgumentUsage("You need to provide a url or a url file")
