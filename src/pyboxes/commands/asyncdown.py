@@ -77,7 +77,7 @@ class KeepAliveClientRequest(ClientRequest):
         socket_keepidle = (
             socket.TCP_KEEPIDLE
             if platform.system() == "Linux"
-            else socket.TCP_KEEPALIVE
+            else socket.TCP_KEEPALIVE  # type: ignore
         )
         sock = conn.protocol.transport.get_extra_info("socket")
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
