@@ -59,13 +59,13 @@ Please see the Command-line Reference [Usage] for details.
 
 ### A simple and easy to download files by sharing link
 
-1. Download single file by sharing link of Google Driver.
+#### 1. Download single file by sharing link of Google Driver.
 
 ```console
 $ pybox gfile <url> <name> <size>
 ```
 
-2. Download files in a folder by client id and folder id.
+#### 2. Download files in a folder by client id and folder id.
 
 ```console
 $ pybox gfolder <client_id> <folder_id>
@@ -83,16 +83,26 @@ Detailed usage please see [Usage Documentation]
 
 ### Download multiple files asynchronously
 
-1. Download single file.
+#### 1. Download single file.
 
 ```console
 $ pybox asyncdown -u <url> -o <output>
 ```
 
-2. Download multiple files.
+#### 2. Download multiple files.
 
 ```console
 $ pybox asyncdown -f <url-file>
+```
+
+For example, suppose `urls.txt` in which the first column is the file name and the second column is the download url.
+`pybox asyncdown -f urls.txt` will download all files in parallel. 
+
+```txt
+ENCFF888ZZV.fastq.gz https://www.encodeproject.org/files/ENCFF888ZZV/@@download/ENCFF888ZZV.fastq.gz
+ENCFF883SEZ.fastq.gz https://www.encodeproject.org/files/ENCFF883SEZ/@@download/ENCFF883SEZ.fastq.gz
+ENCFF035OMK.fastq.gz https://www.encodeproject.org/files/ENCFF035OMK/@@download/ENCFF035OMK.fastq.gz
+ENCFF288CVJ.fastq.gz https://www.encodeproject.org/files/ENCFF288CVJ/@@download/ENCFF288CVJ.fastq.gz   
 ```
 
 Detailed usage please see [Usage Documentation]
